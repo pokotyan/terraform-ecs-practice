@@ -33,7 +33,7 @@ data "aws_iam_policy_document" "alb_log" {
 
 # albのセキュリティグループ定義
 module "http_sg" {
-  source      = "./modules"
+  source      = "./modules/security_group"
   name        = "http-sg"
   vpc_id      = aws_vpc.example.id
   port        = 80
@@ -41,7 +41,7 @@ module "http_sg" {
 }
 
 module "https_sg" {
-  source      = "./modules"
+  source      = "./modules/security_group"
   name        = "https-sg"
   vpc_id      = aws_vpc.example.id
   port        = 443
@@ -49,7 +49,7 @@ module "https_sg" {
 }
 
 module "http_redirect_sg" {
-  source      = "./modules"
+  source      = "./modules/security_group"
   name        = "http-redirect-sg"
   vpc_id      = aws_vpc.example.id
   port        = 8080

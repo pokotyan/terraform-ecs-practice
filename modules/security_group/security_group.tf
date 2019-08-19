@@ -43,7 +43,7 @@ output "security_group_id" {
 # • cidr_blocks - 通信を許可する CIDR ブロック
 #
 # module "example_sg" {
-#   source = "./modules"
+#   source = "./modules/security_group"
 #   name   = "module-sg"
 #   vpc_id = aws_vpc.example.id
 #   port   = 80

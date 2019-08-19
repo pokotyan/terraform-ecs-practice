@@ -42,7 +42,7 @@ resource "aws_ecs_service" "example" {
 }
 
 module "nginx_sg" {
-  source      = "./modules"
+  source      = "./modules/security_group"
   name        = "nginx-sg"
   vpc_id      = aws_vpc.example.id
   port        = 80
